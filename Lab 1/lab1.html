@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 1: Creating Three Shapes in 2D</title>
+
+    <script id="square-vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 squarePosition;
+        void main() {
+            gl_PointSize = 1.0;
+            gl_Position = squarePosition;
+        }
+    </script>
+
+    <script id="square-fragment-shader" type="x-shader/x-fragment">
+        void main() {
+            gl_FragColor = vec4(0.5, 0.6, 0.4, 1.0);
+        }
+    </script>
+
+    <script id="pentagon-vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 pentagonPosition;
+        void main() {
+            gl_PointSize = 1.0;
+            gl_Position = pentagonPosition;
+        }
+    </script>
+
+    <script id="pentagon-fragment-shader" type="x-shader/x-fragment">
+        void main() {
+            gl_FragColor = vec4(0.6, 0.6, 0.7, 1.0);
+        }
+    </script>
+
+    <script id="ellipse-vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 ellipsePosition;
+        void main() {
+            gl_PointSize = 1.0;
+            gl_Position = ellipsePosition;
+        }
+    </script>
+
+    <script id="ellipse-fragment-shader" type="x-shader/x-fragment">
+        void main() {
+            gl_FragColor = vec4(1.0, 0.6, 0.0, 1.0);
+        }
+    </script>
+
+    <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../Common/initShaders.js"></script>
+    <script type="text/javascript" src="../Common/MV.js"></script>
+    <script type="text/javascript" src="lab1.js"></script>
+</head>
+
+<body onload="init()">
+    <canvas id="gl-canvas" width="768" height="768">
+
+    </canvas>
+</body>
+
+</html>
