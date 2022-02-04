@@ -1,16 +1,9 @@
 This is Serin Yoon's Lab 1 assignment.
 
-The first shape is a square.
-The color of the shape is (0.5, 0.6, 0.5, 1.0).
-The coordinates of the shape are (-0.9, -0.9), (-0.9, 0), (-0.1, -0.3), (-0.1, -0.9).
-The shape is shown on the canvas using LINE_LOOP.
-
-The second shape is a pentagon.
-The color of the shape is (0.6, 0.6, 0.7, 1.0).
-The coordinates of the shape are (0, -0.1), (-0.5, 0.3), (-0.3, 0.9), (0.3, 0.9), (0.5, 0.3).
-The shape is shown on the canvas using TRIANGLE_FAN.
-
-The third shape is an ellipse.
-The color of the shape is (1.0, 0.6, 0.0, 1.0).
-The shape is drawn using 400 points that satisfy (0.5 + 0.3 * cosθ, -0.43 + 0.5 * sinθ) when 0 < θ < 2π.
-The shape is shown on the canvas using TRIANGLE_FAN.
+In order to apply different vertex shaders and fragment shaders for each shape, I set id differently, and each FragColor values were set differently.
+In the init() function, a viewport is created, and the vertex shader and the fragment shader is selected to create each program.
+Square, pentagon, and ellipse are drawn in the functions drawSquare(), drawPentagon(), and drawEllipse().
+Each drawing function looks for the attribute position in the vertex shader, set up position to accept vertex data for 2D points,
+enable WebGL to access the data using position, and then draw the shapes.
+Square is drawn using LINE_LOOP, and pentagon and ellipse are drawn using TRIANGLE_FAN.
+The number of coordinates of ellipse is set to 400 so that the shape is not angled.
