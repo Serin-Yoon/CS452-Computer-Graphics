@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+            <title>Lab 2</title>
+            <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+            <script type="text/javascript" src="../Common/initShaders.js"></script>
+            <script type="text/javascript" src="../Common/MV.js"></script>
+            <script type="text/javascript" src="lab2.js"></script>
+            
+            <script type="x-shader/x-vertex" id="vertex-shader">
+                attribute vec4 myPosition;
+                uniform float theta;
+                uniform float constantMovingX;
+                uniform float constantMovingY;
+                uniform vec2 mouseCoordinates;
+
+                void main() {
+                    gl_PointSize = 1.0;
+                    gl_Position.x = myPosition.x * cos(theta) + myPosition.y * sin(theta) + mouseCoordinates.x + constantMovingX;
+                    gl_Position.y = -myPosition.x * sin(theta) + myPosition.y * cos(theta) + mouseCoordinates.y + constantMovingY;
+                    gl_Position.z = 0.0;
+                    gl_Position.w = 1.0;
+                }
+                </script>
+            
+            <script type="x-shader/x-fragment" id="fragment-shader">
+                void main() {
+                    gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+                }
+            </script>
+    </head>
+    
+    <body onload="init()" onkeydown="moveShapeKeys(event)">
+        <canvas width="615" height="615" id="gl-canvas" onclick="moveShape(event)"></canvas>
+        <br />
+        <button id="startRotate" style="width: 150px; height: 50px; font-size: 1rem;" onclick="startAnim()">Start Rotate</button>
+        <button id="stopRotate" style="width: 150px; height: 50px; font-size: 1rem;" onclick="stopAnim()">Stop Rotate</button>
+        <button id="increaseSpeed" style="width: 150px; height: 50px; font-size: 1rem;" onclick="increaseSpeed()">Increase</button>
+        <button id="decreaseSpeed" style="width: 150px; height: 50px; font-size: 1rem;" onclick="decreaseSpeed()">Decrease</button>
+    </body>
+</html>
+
