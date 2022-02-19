@@ -11,18 +11,18 @@
 
 **2. Direction change using A, S, D, W**
 
--  Pressing A moves to the left.
--  Pressing S moves to the bottom.
--  Pressing D moves to the right.
--  Pressing W moves to the top.
+-  Pressing `A` moves to the left.
+-  Pressing `S` moves to the bottom.
+-  Pressing `D` moves to the right.
+-  Pressing `W` moves to the top.
 -  If the shape was rotating, it continues to rotate.
 -  If the shape was not rotating, it continues to not rotate.
 -  The speed of movement does not change.
 
 **3. Increasing/Decreasing the speed**
 
--  Pressing the 'Increase' button increases the speed of movement.
--  Pressing the 'Decrease' button decreases the speed of movement.
+-  Pressing the `Increase` button increases the speed of movement.
+-  Pressing the `Decrease` button decreases the speed of movement.
 -  If the shape was rotating, it continues to rotate.
 -  If the shape was not rotating, it continues to not rotate.
 -  The direction of movement does not change.
@@ -38,6 +38,6 @@
 
 **5. Start/Stop rotate**
 
-- Pressing the 'Start Rotate' button makes shape to rotate.
-- Pressing the 'Stop Rotate' button makes shape to not rotate.
-- The speed and direction of movement does not change.
+- Pressing the `Start Rotate` button makes shape to rotate.
+- Pressing the `Stop Rotate` button makes shape to not rotate.
+- The speed and direction of movement do not change.
