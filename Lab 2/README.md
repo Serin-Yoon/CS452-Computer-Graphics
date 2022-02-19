@@ -1,12 +1,12 @@
 
-### Lab 2: Animation and Interaction
+### Lab 2 : Animation and Interaction
 
-<img src="https://user-images.githubusercontent.com/53158200/154783413-203842eb-8f28-45c2-b44e-6fb292854b18.gif" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/53158200/154783413-203842eb-8f28-45c2-b44e-6fb292854b18.gif" width="40%" height="40%">
 
 **1. Polygon with more than 4 vertices**
 
 - Using TRIANGLE_FAN, an hourglass-shaped shape was made.
-- At first, the shape is located in the center of the canvas and moves to the right at the initial speed while rotating.
+- Shape is located in the center of the canvas and moves to the right while rotating.
 
 
 **2. Direction change using A, S, D, W**
