@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <title>Lab 3: 3D Transformations</title>
+
+    <script id="vertex-shader" type="x-shader/x-vertex">
+                attribute vec4 vertexPosition;
+                attribute vec4 vertexColor;
+                varying vec4 fragmentColor;
+
+                uniform float alpha;
+                uniform float beta;
+                uniform float gamma;
+                mat4 M_x;
+                mat4 M_y;
+                mat4 M_z;
+
+                uniform vec2 movingValue;
+                mat4 M_move;
+
+                uniform vec2 scaleValue;
+                mat4 M_scale;
+
+                void main() {
+                    // Rotation around X
+                    M_x = mat4(
+                        1, 0, 0, 0,
+                        0, cos(alpha), -sin(alpha), 0,
+                        0, sin(alpha), cos(alpha), 0,
+                        0, 0, 0, 1
+                    );
+
+                    // Rotation around Y
+                    M_y = mat4(
+                        cos(beta), 0, -sin(beta), 0,
+                        0, 1, 0, 0,
+                        sin(beta), 0, cos(beta), 0,
+                        0, 0, 0, 1
+                    );
+
+                    // Rotation around Z
+                    M_z = mat4(
+                        cos(gamma), -sin(gamma), 0, 0,
+                        sin(gamma), cos(gamma), 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                    );
+
+                    // Move along X, Y
+                    M_move = mat4(
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        movingValue.x, movingValue.y, 0, 1
+                    );
+
+                    // Scale along X, Y
+                    M_scale = mat4(
+                        scaleValue.x, 0, 0, 0,
+                        0, scaleValue.y, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                    );
+
+                    gl_Position = M_scale * M_move * M_z * M_y * M_x * vertexPosition;
+                    fragmentColor = vertexColor;
+                }
+            </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+                precision mediump float;
+                varying vec4 fragmentColor;
+
+                void main() {
+                    gl_FragColor = fragmentColor;
+                }
+
+            </script>
+
+    <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../Common/initShaders.js"></script>
+    <script type="text/javascript" src="../Common/MV.js"></script>
+    <script type="text/javascript" src="lab3.js"></script>
+
+</head>
+
+<body onload = "init()" onkeydown="keyPress(event)">
+<canvas id="gl-canvas" width="512" height="512"></canvas><br/>
+
+<div style="margin: 15px;">
+    <div style="font-size: 1.2rem; font-weight: 600">Rotation</div>
+    <div> - Press 'X' to rotate the shape around x-axis </div>
+    <div> - Press 'Y' to rotate the shape around y-axis </div>
+    <div> - Press 'Z' to rotate the shape around z-axis </div>
+    <br>
+    <div style="font-size: 1.2rem; font-weight: 600">Transformation</div>
+    <div> - Press ← to move left (along x-axis) </div>
+    <div> - Press → to move right (along x-axis) </div>
+    <div> - Press ↑ to move up (along y-axis) </div>
+    <div> - Press ↓ to move down (along y-axis) </div>
+    <br>
+    <div style="font-size: 1.2rem; font-weight: 600">Scaling</div>
+    <div> - Press 'D' to increase the size along x-axis </div>
+    <div> - Press 'W' to increase the size along y-axis </div>
+</div>
+</body>
+</html>
