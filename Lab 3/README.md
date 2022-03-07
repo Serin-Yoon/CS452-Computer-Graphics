@@ -1,7 +1,7 @@
 
 ### Lab 3 : 3D Transformation
 
-<img src="https://im4.ezgif.com/tmp/ezgif-4-d74a34beb0.gif" width="40%" height="40%">
+<img src="https://user-images.githubusercontent.com/53158200/156970895-76fcbbc8-20fa-411e-94ce-fdcea2f181cc.gif" width="40%" height="40%">
 
 **1. Octahedron**
 
