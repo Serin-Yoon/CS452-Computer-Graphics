@@ -1,6 +1,6 @@
 ### Final Project : 3D Scene
 
-<img src="https://user-images.githubusercontent.com/53158200/168411951-313580f6-9d52-45f2-bfa7-6df630cee7f0.gif" width="40%" height="40%">
+<img src="https://user-images.githubusercontent.com/53158200/168411951-313580f6-9d52-45f2-bfa7-6df630cee7f0.gif" width="60%" height="60%">
 
 - Used FBX files of the models
 - Created scene in ThreeJS editor
@@ -8,7 +8,7 @@
 - Ambient light / Spotlight
 - Texture / Bump mapping
 
-
+<br>
 
 - Controls:
   - 1: Coke 1 spinning
@@ -17,6 +17,6 @@
   - 4: Turn on the light
   - 5: Stop/Rotate the scene
 
-
+<br>
 
 - Due to the CORS issue, local server is needed (use IntelliJ)
